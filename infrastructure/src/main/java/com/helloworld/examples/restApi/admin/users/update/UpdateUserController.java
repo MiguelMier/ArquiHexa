@@ -9,10 +9,7 @@ import com.helloworld.examples.port.in.users.update.UpdateUserUseCase;
 import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("restapi/users")
 @RestController
@@ -27,7 +24,7 @@ public class UpdateUserController {
         System.out.println("UpdateUserController has been created");
     }
 
-    @PostMapping(path = "/updateContactData")
+    @PutMapping(path = "/updateContactData")
     UpdateUserResponse upadateContactData(@RequestBody UpdateUserRequest request) throws Exception {
         var output = useCase.updateContactData(request.toApplicationModel());
         return UpdateUserResponse.fromApplicationModel(output);

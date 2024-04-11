@@ -27,11 +27,4 @@ public class UpdateUserH2Repository implements UpdateContactDataRepository {
         return rowsUpdated > 0;
     }
 
-
-    public void deleteUser(Long userId) {
-        int rowsUpdated = jdbcTemplate.update("DELETE FROM USUARIO WHERE ID = ? ", userId);
-        if (rowsUpdated < 1) {
-            throw new RuntimeException("User not found");
-        }
-    }
 }

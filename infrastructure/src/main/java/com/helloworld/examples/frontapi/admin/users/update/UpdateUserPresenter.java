@@ -7,10 +7,7 @@ import com.helloworld.examples.frontapi.admin.users.update.models.UpdateUserResp
 import com.helloworld.examples.port.in.users.delete.DeleteUserUseCase;
 import com.helloworld.examples.port.in.users.update.UpdateUserUseCase;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("frontapi/users")
 @RestController
@@ -19,7 +16,7 @@ public class UpdateUserPresenter {
 
     private final UpdateUserUseCase useCase;
 
-    @PostMapping(path = "/updateContactData")
+    @PutMapping(path = "/updateContactData")
     UpdateUserResponse updateContactData(@RequestBody UpdateUserRequest request) throws Exception {
         var output = useCase.updateContactData(request.toApplicationModel());
         return UpdateUserResponse.fromApplicationModel(output);
