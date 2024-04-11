@@ -1,14 +1,14 @@
 package com.helloworld.examples.port.in.users.delete.models;
 
-import com.helloworld.examples.models.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
-@AllArgsConstructor
 @Builder
 @Getter
+@Setter
+@AllArgsConstructor
 public class DeleteUserOutput {
-
-    boolean success;
+    private boolean success;
 }
