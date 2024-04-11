@@ -27,8 +27,8 @@ public class UpdateUserController {
         System.out.println("UpdateUserController has been created");
     }
 
-    @PostMapping(path = "/update")
-    UpdateUserResponse deleteUser(@RequestBody UpdateUserRequest request) throws Exception {
+    @PostMapping(path = "/updateContactData")
+    UpdateUserResponse upadateContactData(@RequestBody UpdateUserRequest request) throws Exception {
         var output = useCase.updateContactData(request.toApplicationModel());
         return UpdateUserResponse.fromApplicationModel(output);
     }

@@ -19,8 +19,8 @@ public class UpdateUserPresenter {
 
     private final UpdateUserUseCase useCase;
 
-    @PostMapping(path = "/update")
-    UpdateUserResponse deleteUser(@RequestBody UpdateUserRequest request) throws Exception {
+    @PostMapping(path = "/updateContactData")
+    UpdateUserResponse updateContactData(@RequestBody UpdateUserRequest request) throws Exception {
         var output = useCase.updateContactData(request.toApplicationModel());
         return UpdateUserResponse.fromApplicationModel(output);
     }

@@ -12,7 +12,6 @@ import lombok.Data;
 public class UpdateUserInput {
 
     User who;
-    Long userToUpdateID;
     User userToUpdate;
 
     public void validate() throws InvalidParameterException {
